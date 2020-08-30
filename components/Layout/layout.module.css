@@ -1,0 +1,31 @@
+.container {
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerImage {
+  width: 6rem;
+  height: 6rem;
+}
+
+.headerImageWrapper {
+  border-radius: 50%;
+  padding: 6rem;
+  background-color: #cd89;
+}
+.headerHomeImage {
+  width: 125px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
