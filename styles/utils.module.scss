@@ -36,7 +36,7 @@
 }
 
 .textSm {
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.9;
   font-weight: 500;
 }
@@ -74,6 +74,8 @@
 .flexContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bottomMargin {
@@ -85,4 +87,24 @@
 
 .topMargin {
   margin-top: 0.5rem;
+}
+.leftMargin {
+  margin-left: 0.5rem;
+}
+
+.center {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flexTwo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pointerEl {
+  cursor: pointer;
 }

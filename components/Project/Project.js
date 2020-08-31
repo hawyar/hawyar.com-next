@@ -11,14 +11,14 @@ const projects = [
   {
     id: 2,
     name: 'Google Cloud micro-services',
-    link: 'https://github.com/muopensource',
+    link: 'https://github.com/muopensource/gcloud-explore',
     description:
       'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing. ',
   },
   {
     id: 3,
     name: 'GraphCMS Blog Starter',
-    link: 'https://github.com/muopensource',
+    link: 'https://github.com/hawyar/gatsby-graphcms-starter',
     description:
       'A blazing fast Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more',
   },
@@ -28,7 +28,7 @@ const Project = () => {
   return (
     <div>
       <h2 className={utilStyles.headingLg}>Recent projects</h2>
-      <div className={utilStyles.flexContainer}>
+      <div>
         {projects.map((el) => {
           return (
             <div key={el.id} className={utilStyles.bottomMargin}>

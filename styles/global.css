@@ -5,10 +5,16 @@ body {
   line-height: 1.6;
   font-family: 'Cooper Hewitt';
   font-size: 18px;
+  user-select: #6b48ff;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  color: #f2f4f6;
+  background: #6b48ff;
 }
 
 a {

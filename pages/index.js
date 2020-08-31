@@ -27,20 +27,17 @@ export default function Home({ allPostsData }) {
           <div style={{ marginTop: '1rem' }}>
             <h2 className={utilStyles.headingLg}>
               I design and develop performant web applications & micro-services
-              on the cloud
             </h2>
           </div>
         </div>
       </section>
-      <section
-        className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.container}`}
-      >
+      <section className={`${utilStyles.headingMd} ${utilStyles.container}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <div key={id}>
               <li className={utilStyles.listItem}>
-                <Link href='/posts/[id]' as={`/posts/${id}`}>
+                <Link href='/blog/[id]' as={`/blog/${id}`}>
                   <a>{title}</a>
                 </Link>
                 <br />
