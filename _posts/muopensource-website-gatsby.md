@@ -1,6 +1,6 @@
 ---
-title: Image Processing using Serverless Functions on Google Cloud
-date: '2020-01-01'
+title: 'Building MU Open Source with Gatsby.js'
+date: '2020-08-31'
 ---
 
 <br>

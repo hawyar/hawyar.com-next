@@ -29,3 +29,12 @@
 .backToHome {
   margin: 3rem 0 0;
 }
+
+.topLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 0.8rem;
+  background-color: #6b48ff;
+}

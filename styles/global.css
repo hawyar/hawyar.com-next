@@ -5,7 +5,7 @@ body {
   line-height: 1.6;
   font-family: 'Cooper Hewitt';
   font-size: 18px;
-  user-select: #6b48ff;
+  user-select: #1ee3cf;
 }
 
 * {
@@ -14,7 +14,7 @@ body {
 
 ::selection {
   color: #f2f4f6;
-  background: #6b48ff;
+  background: #1ee3cf;
 }
 
 a {
