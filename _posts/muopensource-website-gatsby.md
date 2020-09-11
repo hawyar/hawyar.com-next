@@ -1,22 +1,4 @@
 ---
-title: 'Building MU Open Source with Gatsby.js'
-date: '2020-08-31'
+title: 'Building MU Open Source'
+date: '09-10-2020'
 ---
-
-<br>
-Serverless functions are a great way to perform event driven operations in an isolated environment. Such event can be an HTTP request or a new file upload in a Google Cloud Bucket or another servlerss function.
-
-<br>
-<br>
-
-**Pre-requisites**
-
-- [Nodejs](https://nodejs.org/en/)
-- [Google Cloud](https://cloud.google.com/) account
-
-Run the following commands to make sure you have `npm` and `node` on your computer.
-
-```javascript
-node - v; // v12.14.1
-npm - v; // 6.14.8
-```

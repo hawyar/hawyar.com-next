@@ -3,10 +3,8 @@ import Layout, { siteTitle } from '../components/Layout/Layout';
 import utilStyles from '../styles/utils.module.scss';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
 import Project from '../components/Project/Project';
 import Footer from '../components/Footer';
-
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
@@ -23,27 +21,28 @@ export default function Home({ allPostsData }) {
       </Head>
       <section>
         <div>
-          <h2 className={utilStyles.textSm}>Hey! I am Hawyar 👋</h2>
+          <h2 className={utilStyles.headingMd}>
+            Hey! I am Hawyar <span style={{ marginLeft: `.5rem` }}>👋</span>
+          </h2>
+
           <div style={{ marginTop: '1rem' }}>
-            <h2 className={utilStyles.headingLg}>
+            <h2 className={utilStyles.headingSuper}>
               I design and develop performant web applications & micro-services
             </h2>
           </div>
         </div>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.container}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+      <section className={`${utilStyles.container}`}>
+        <h2 className={utilStyles.headingMd}>Writings</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <div key={id}>
               <li className={utilStyles.listItem}>
                 <Link href='/blog/[id]' as={`/blog/${id}`}>
-                  <a>{title}</a>
+                  <a className={utilStyles.headingLg}>{title}</a>
                 </Link>
                 <br />
-                <small className={utilStyles.lightText}>
-                  <Date dateString={date} />
-                </small>
+                <small className={utilStyles.lightText}>{date}</small>
               </li>
             </div>
           ))}

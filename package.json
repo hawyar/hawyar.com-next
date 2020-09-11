@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.16",
-    "@next/mdx": "^9.5.2",
+    "@next/mdx": "^9.5.3",
     "date-fns": "^2.16.1",
     "firebase": "^7.19.1",
     "gray-matter": "^4.0.2",

@@ -1,11 +1,9 @@
 import Layout from '../../components/Layout/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import Date from '../../components/date';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.scss';
 import LeftArrow from '../../public/svg/arrow-left.svg';
 import Link from 'next/link';
-import { MDXProvider } from '../../components/MDXComponent';
 export default function Post({ postData }) {
   return (
     <Layout>
@@ -14,16 +12,18 @@ export default function Post({ postData }) {
       </Head>
 
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
+        <h1 className={utilStyles.headingSuper}>{postData.data.title}</h1>
+        <div className={utilStyles.lightText}>{postData.data.date}</div>
+        <div className={`${utilStyles.mdContent} ${utilStyles.topMargin}`}>
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       <Link href='/'>
-        <a className={`${utilStyles.flexTwo} ${utilStyles.pointerEl}`}>
+        <a
+          className={`${utilStyles.flexRow} ${utilStyles.pointerEl} ${utilStyles.topMargin}`}
+        >
           <LeftArrow />
-          <span className={`${utilStyles.textSm} ${utilStyles.leftMargin}`}>
+          <span className={`${utilStyles.textSm} ${utilStyles.leftMargin} `}>
             {' '}
             Back{' '}
           </span>
@@ -42,6 +42,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
+  console.log(postData);
 
   return {
     props: {

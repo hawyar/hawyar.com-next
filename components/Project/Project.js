@@ -13,7 +13,7 @@ const projects = [
     name: 'Google Cloud micro-services',
     link: 'https://github.com/muopensource/gcloud-explore',
     description:
-      'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing. ',
+      'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing',
   },
   {
     id: 3,
@@ -27,17 +27,18 @@ const projects = [
 const Project = () => {
   return (
     <div>
-      <h2 className={utilStyles.headingLg}>Recent projects</h2>
+      <h2 className={utilStyles.headingMd}>Recent projects</h2>
       <div>
         {projects.map((el) => {
           return (
-            <div key={el.id} className={utilStyles.bottomMargin}>
+            <div
+              key={el.id}
+              className={`${utilStyles.bottomMargin} ${utilStyles.listItem}`}
+            >
               <a href={el.link}>
-                <h2 className={utilStyles.headingMd}>{el.name}</h2>
+                <h2 className={utilStyles.headingLg}>{el.name}</h2>
               </a>
-              <h4 className={`${utilStyles.textSm} ${utilStyles.topMargin}`}>
-                {el.description}
-              </h4>
+              <h4 className={`${utilStyles.textSm}`}>{el.description}</h4>
             </div>
           );
         })}
