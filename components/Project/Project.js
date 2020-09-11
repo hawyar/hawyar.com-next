@@ -36,7 +36,12 @@ const Project = () => {
               className={`${utilStyles.bottomMargin} ${utilStyles.listItem}`}
             >
               <a href={el.link}>
-                <h2 className={utilStyles.headingLg}>{el.name}</h2>
+                <h2
+                  style={{ marginBottom: `0.6rem` }}
+                  className={utilStyles.headingLg}
+                >
+                  {el.name}
+                </h2>
               </a>
               <h4 className={`${utilStyles.textSm}`}>{el.description}</h4>
             </div>

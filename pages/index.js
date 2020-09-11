@@ -39,10 +39,10 @@ export default function Home({ allPostsData }) {
             <div key={id}>
               <li className={utilStyles.listItem}>
                 <Link href='/blog/[id]' as={`/blog/${id}`}>
-                  <a className={utilStyles.headingLg}>{title}</a>
+                  <h2 className={utilStyles.headingLg}>{title}</h2>
                 </Link>
-                <br />
-                <small className={utilStyles.lightText}>{date}</small>
+
+                <span className={`${utilStyles.lightText} `}>{date}</span>
               </li>
             </div>
           ))}
