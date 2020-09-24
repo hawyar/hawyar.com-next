@@ -27,7 +27,7 @@ const projects = [
 const Project = () => {
   return (
     <div>
-      <h2 className={utilStyles.headingMd}>Recent projects</h2>
+      <h2 className={utilStyles.headingMd}>Projects</h2>
       <div>
         {projects.map((el) => {
           return (
