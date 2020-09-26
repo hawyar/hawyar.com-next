@@ -4,6 +4,8 @@ import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.scss';
 import LeftArrow from '../../public/svg/arrow-left.svg';
 import Link from 'next/link';
+import styled from 'styled-components';
+import { Base } from '../../styles/_index';
 export default function Post({ postData }) {
   return (
     <Layout>
@@ -12,26 +14,49 @@ export default function Post({ postData }) {
       </Head>
 
       <article>
-        <h1 className={utilStyles.headingSuper}>{postData.data.title}</h1>
-        <div className={utilStyles.lightText}>{postData.data.date}</div>
-        <div className={`${utilStyles.mdContent} ${utilStyles.topMargin}`}>
-          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
+        <Title size='lg' as='h1'>
+          {postData.data.title}
+        </Title>
+        <Spacer size='2rem' />
+
+        <MdContent dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
       <Link href='/'>
-        <a
-          className={`${utilStyles.flexRow} ${utilStyles.pointerEl} ${utilStyles.topMargin}`}
-        >
+        <a>
           <LeftArrow />
-          <span className={`${utilStyles.textSm} ${utilStyles.leftMargin} `}>
-            {' '}
-            Back{' '}
-          </span>
+          <span> Back </span>
         </a>
       </Link>
     </Layout>
   );
 }
+const MdContent = styled.div`
+  h1 {
+    font-size: ${(props) => props.theme.fontSize.lg};
+  }
+  h2 {
+    font-size: ${(props) => props.theme.fontSize.md};
+  }
+  h3 {
+    font-size: ${(props) => props.theme.fontSize.sm};
+  }
+  h4 {
+    font-size: ${(props) => props.theme.fontSize.sm};
+  }
+  h5 {
+    font-size: ${(props) => props.theme.fontSize.sm};
+  }
+`;
+
+const Title = styled(Base)`
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -1.5px;
+`;
+const Spacer = styled.div`
+  padding-top: ${(props) => (props.size ? props.size : `1rem`)};
+`;
+
 export async function getStaticPaths() {
   const paths = getAllPostIds();
   return {

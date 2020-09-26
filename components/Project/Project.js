@@ -10,7 +10,7 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Google Cloud micro-services',
+    name: 'gobucky - A CLI for Google Cloud Storage',
     link: 'https://github.com/muopensource/gcloud-explore',
     description:
       'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing',
