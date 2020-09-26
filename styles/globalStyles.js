@@ -1,17 +1,13 @@
-::selection {
-  color: #f2f4f6;
-  background: #1ee3cf;
-}
+import { createGlobalStyle } from 'styled-components';
 
-a:hover {
-  text-decoration: underline;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
+export const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Cooper Hewitt' */
+    font-family: 'Inter'
+  }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -23,6 +19,8 @@ img {
  */
 
 html {
+  
+
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -36,15 +34,10 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  user-select: #1ee3cf;
 }
 
 /**
- * Render the `main` element consistently in IE.
+ * Render the _main_ element consistently in IE.
  */
 
 main {
@@ -52,8 +45,8 @@ main {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
+ * Correct the font size and margin on _h1_ elements within _section_ and
+ * _article_ contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
@@ -77,7 +70,7 @@ hr {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd _em_ font sizing in all browsers.
  */
 
 pre {
@@ -93,8 +86,6 @@ pre {
  */
 
 a {
-  color: #6b48ff;
-  text-decoration: none;
   background-color: transparent;
 }
 
@@ -120,7 +111,7 @@ strong {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd _em_ font sizing in all browsers.
  */
 
 code,
@@ -139,7 +130,7 @@ small {
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
+ * Prevent _sub_ and _sup_ elements from affecting the line height in
  * all browsers.
  */
 
@@ -255,9 +246,9 @@ fieldset {
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 2. Correct the color inheritance from _fieldset_ elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
+ *    _fieldset_ elements in all browsers.
  */
 
 legend {
@@ -325,7 +316,7 @@ textarea {
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
+ * 2. Change font properties to _inherit_ in Safari.
  */
 
 ::-webkit-file-upload-button {
@@ -370,3 +361,7 @@ template {
 [hidden] {
   display: none;
 }
+
+
+  
+`;

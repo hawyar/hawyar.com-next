@@ -5,6 +5,9 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Project from '../components/Project/Project';
 import Footer from '../components/Footer';
+import { SecondaryHeader, Base } from '../styles/_index';
+import styled from 'styled-components';
+
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
@@ -19,32 +22,28 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section>
-        <div>
-          <h2 className={utilStyles.headingMd}>
-            Hey! I am Hawyar <span style={{ marginLeft: `.5rem` }}>👋</span>
-          </h2>
+      <div>
+        <MainHeader size='lg' as='h1'>
+          Hi I'm Hawyar. I enjoy creating software that helps and enables others
+        </MainHeader>
+      </div>
 
-          <div style={{ marginTop: '1rem' }}>
-            <h2 className={utilStyles.headingSuper}>
-              I design and develop performant web applications & micro-services
-            </h2>
-          </div>
-        </div>
-      </section>
       <section className={`${utilStyles.container}`}>
-        <h2 className={utilStyles.headingMd}>Writings</h2>
+        <SectionHeader size='xs' as='h3'>
+          Writings
+        </SectionHeader>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <div key={id}>
               <li className={utilStyles.listItem}>
                 <Link href='/blog/[id]' as={`/blog/${id}`}>
-                  <a>
-                    {' '}
-                    <h2 className={utilStyles.headingLg}>{title}</h2>
+                  <a style={{ textDecoration: `none` }}>
+                    <PostHeader as='h1' size='md'>
+                      {title}
+                    </PostHeader>
                   </a>
                 </Link>
-
+                <Spacer />
                 <span className={`${utilStyles.lightText} `}>{date}</span>
               </li>
             </div>
@@ -62,3 +61,26 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
+
+const MainHeader = styled(Base)`
+  font-weight: 400;
+  letter-spacing: -1.3px;
+`;
+
+const SectionHeader = styled(Base)`
+  font-weight: 500;
+  letter-spacing: -0.8px;
+`;
+
+const PostHeader = styled(Base)`
+  font-weight: 500;
+
+  :hover {
+    text-decoration: underline;
+  }
+  color: ${(props) => props.theme.colors.primary};
+`;
+
+const Spacer = styled.div`
+  padding-top: 2rem;
+`;

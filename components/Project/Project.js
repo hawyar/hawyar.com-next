@@ -1,5 +1,5 @@
-import utilStyles from '../../styles/utils.module.scss';
-
+import { Base } from '../../styles/_index';
+import styled from 'styled-components';
 const projects = [
   {
     id: 1,
@@ -27,23 +27,24 @@ const projects = [
 const Project = () => {
   return (
     <div>
-      <h2 className={utilStyles.headingMd}>Projects</h2>
+      <SectionHeader size='xs' as='h3'>
+        Projects
+      </SectionHeader>
       <div>
+        <Spacer size='2rem' />
         {projects.map((el) => {
           return (
-            <div
-              key={el.id}
-              className={`${utilStyles.bottomMargin} ${utilStyles.listItem}`}
-            >
-              <a href={el.link}>
-                <h2
-                  style={{ marginBottom: `0.6rem` }}
-                  className={utilStyles.headingLg}
-                >
+            <div key={el.id}>
+              <a href={el.link} style={{ textDecoration: `none` }}>
+                <PostHeader as='h1' size='md'>
                   {el.name}
-                </h2>
+                </PostHeader>
               </a>
-              <h4 className={`${utilStyles.textSm}`}>{el.description}</h4>
+              <Spacer size='1rem' />
+              <Info a='p' size='xs'>
+                {el.description}
+              </Info>
+              <Spacer size='3rem' />
             </div>
           );
         })}
@@ -51,5 +52,22 @@ const Project = () => {
     </div>
   );
 };
+const Spacer = styled.div`
+  padding-top: ${(props) => (props.size ? props.size : `1rem`)};
+`;
 
+const SectionHeader = styled(Base)`
+  font-weight: 500;
+  letter-spacing: -0.8px;
+`;
+const PostHeader = styled(Base)`
+  font-weight: 500;
+
+  :hover {
+    text-decoration: underline;
+  }
+  color: ${(props) => props.theme.colors.primary};
+`;
+
+const Info = styled(Base)``;
 export default Project;

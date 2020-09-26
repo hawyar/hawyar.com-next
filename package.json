@@ -22,6 +22,10 @@
     "remark": "^12.0.1",
     "remark-html": "^12.0.0",
     "sass": "^1.26.10",
+    "styled-components": "^5.2.0",
     "typeface-cooper-hewitt": "0.0.44"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }

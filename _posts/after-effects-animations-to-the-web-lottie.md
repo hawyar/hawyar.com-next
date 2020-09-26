@@ -1,12 +1,13 @@
 ---
-title: 'After Effects Animations to the Web with Lottie'
-date: '09-10-2020'
+title: 'Take Your After Effects Animations to the Web with Lottie'
+date: '09/13/2020'
 ---
 
-## Starting with After Effects
+## What is After Effects?
+
+After Effects is a compositing tool - photoshop but for videos and more. It is a power house for motion graphics and visual effects.
 
 <!-- image -->
-<!-- ![Mou icon](http://mouapp.com/Mou_128.png) -->
 
 ## Overview
 
