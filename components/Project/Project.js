@@ -36,7 +36,7 @@ const Project = () => {
           return (
             <div key={el.id}>
               <a href={el.link} style={{ textDecoration: `none` }}>
-                <PostHeader as='h1' size='md'>
+                <PostHeader as='h1' size='sm'>
                   {el.name}
                 </PostHeader>
               </a>

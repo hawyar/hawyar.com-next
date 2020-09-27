@@ -1,4 +1,4 @@
 ---
 title: 'A Reusable React Component for SVG Icons'
-date: '09/13/2020'
+date: '09/12/2020'
 ---

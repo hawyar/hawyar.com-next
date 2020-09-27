@@ -38,7 +38,7 @@ export default function Home({ allPostsData }) {
               <li className={utilStyles.listItem}>
                 <Link href='/blog/[id]' as={`/blog/${id}`}>
                   <a style={{ textDecoration: `none` }}>
-                    <PostHeader as='h1' size='md'>
+                    <PostHeader as='h1' size='sm'>
                       {title}
                     </PostHeader>
                   </a>
@@ -82,5 +82,5 @@ const PostHeader = styled(Base)`
 `;
 
 const Spacer = styled.div`
-  padding-top: 2rem;
+  padding-top: 1rem;
 `;

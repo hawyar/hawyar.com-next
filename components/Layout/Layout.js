@@ -2,13 +2,15 @@ import styles from '../Layout/layout.module.css';
 import utilStyles from '../../styles/utils.module.scss';
 import Link from 'next/link';
 import Head from 'next/head';
+import styled from 'styled-components';
+
 const name = `Hawyar`;
 export const siteTitle = `Hawyar`;
 
 const Layout = ({ children }, home) => {
   return (
-    <div className={styles.topLine}>
-      <div className={`${styles.container}`}>
+    <TopLine>
+      <Container>
         <Head>
           <link rel='icon' href='/favicon.ico' />
           <meta name='description' content="Hawyar's personal website" />
@@ -23,47 +25,26 @@ const Layout = ({ children }, home) => {
 
           <title>{siteTitle}</title>
         </Head>
-        <header className={styles.header}>
-          {home ? (
-            <div>
-              {/* <img
-              src='/images/profile.png'
-              className={`${styles.headerHomeImage}`}
-              alt={name}
-            /> */}
-            </div>
-          ) : (
-            <div>
-              <Link href='/'>
-                <a>
-                  <div className={`${styles.headerImageWrapper}`}>
-                    <img
-                      src='/images/profile.png'
-                      className={`${styles.headerImage}`}
-                      alt={name}
-                    />
-                  </div>
-                </a>
-                <h2 className={utilStyles.headingLg}>
-                  <Link href='/'>
-                    <a className={utilStyles.colorInherit}>{name}</a>
-                  </Link>
-                </h2>
-              </Link>
-            </div>
-          )}
-        </header>
         <main>{children}</main>
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href='/'>
-              <a>← Back to home</a>
-            </Link>
-          </div>
-        )}
-      </div>
-    </div>
+      </Container>
+    </TopLine>
   );
 };
+
+const TopLine = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 1rem;
+  background-color: ${(props) => props.theme.colors.primary};
+`;
+
+const Container = styled.div`
+  max-width: 35rem;
+  padding: 0 1rem;
+
+  margin: 3rem auto 6rem;
+`;
 
 export default Layout;
