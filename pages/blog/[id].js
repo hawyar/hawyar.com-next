@@ -2,7 +2,6 @@ import Layout from '../../components/Layout/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.scss';
-import LeftArrow from '../../public/svg/arrow-left.svg';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Base } from '../../styles/_index';
@@ -21,12 +20,17 @@ export default function Post({ postData }) {
 
         <MdContent dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-      <Link href='/'>
-        <a>
-          <LeftArrow />
-          <span> Back </span>
-        </a>
-      </Link>
+
+      <FooterWrapper>
+        <Link href='/'>
+          <a>
+            <div>
+              ←<span style={{ marginLeft: `.4rem`, padding: `0` }}>Back</span>
+            </div>
+          </a>
+        </Link>
+        <div>Suggest a change</div>
+      </FooterWrapper>
     </Layout>
   );
 }
@@ -74,3 +78,16 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+const FooterWrapper = styled.div`
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.primary};
+  }
+`;
