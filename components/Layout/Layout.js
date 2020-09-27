@@ -1,6 +1,3 @@
-import styles from '../Layout/layout.module.css';
-import utilStyles from '../../styles/utils.module.scss';
-import Link from 'next/link';
 import Head from 'next/head';
 import styled from 'styled-components';
 

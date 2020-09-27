@@ -1,18 +1,32 @@
-import utilStyles from '../styles/utils.module.scss';
+import styled from 'styled-components';
+import { Base } from '../styles/_index';
+
+const email = `hawyarfa@gmail.com`;
 const Footer = () => {
   return (
-    <div className={`${utilStyles.flexContainer}`}>
-      <span className={utilStyles.textSm}>
-        {' '}
+    <Wrapper>
+      <Self as='span' size='base'>
         {new Date().getFullYear()}, Hawyar F.
-      </span>
-      <div>
-        <a href='https://github.com/hawyar' className={utilStyles.textSm}>
-          on GitHub
-        </a>
-      </div>
-    </div>
+      </Self>
+      <Contact as='a' size='base' href={`mailto:${email}@gmail.com`}>
+        Get in touch
+      </Contact>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Contact = styled(Base)`
+  font-weight: 500;
+
+  color: ${(props) => props.theme.colors.primary};
+`;
+
+const Self = styled(Base)``;
 export default Footer;
