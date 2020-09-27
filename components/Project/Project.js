@@ -69,5 +69,9 @@ const PostHeader = styled(Base)`
   color: ${(props) => props.theme.colors.primary};
 `;
 
-const Info = styled(Base)``;
+const Info = styled(Base)`
+  padding: 0;
+  margin: 0;
+  line-height: 1.3;
+`;
 export default Project;

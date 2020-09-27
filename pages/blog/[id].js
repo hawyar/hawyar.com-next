@@ -1,7 +1,6 @@
 import Layout from '../../components/Layout/Layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import utilStyles from '../../styles/utils.module.scss';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { Base } from '../../styles/_index';
