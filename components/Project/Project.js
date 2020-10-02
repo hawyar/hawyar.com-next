@@ -3,30 +3,34 @@ import styled from 'styled-components';
 const projects = [
   {
     id: 1,
-    name: 'Manchester University Open Source Project',
-    link: 'https://github.com/muopensource',
+    name: "Manchester University's Open Source Project",
+    link: 'https://muopensource.netlify.app/',
     description:
-      "Created and actviely maintaining Manchester University's open source GitHub organiztion",
+      "Created and actively maintaining Manchester University's open source project.",
   },
   {
     id: 2,
     name: 'gobucky - A CLI for Google Cloud Storage',
     link: 'https://github.com/muopensource/gcloud-explore',
     description:
-      'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing',
+      'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing.',
   },
   {
     id: 3,
     name: 'GraphCMS Blog Starter',
-    link: 'https://github.com/hawyar/gatsby-graphcms-starter',
+    link: 'https://gatsby-graphcms.netlify.app/',
     description:
-      'A blazing fast Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more',
+      'A Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more.',
   },
 ];
 
 const Project = () => {
   return (
-    <div>
+    <div
+      css={`
+        padding-top: 2rem;
+      `}
+    >
       <SectionHeader size='xs' as='h3'>
         Projects
       </SectionHeader>
@@ -73,5 +77,6 @@ const Info = styled(Base)`
   padding: 0;
   margin: 0;
   line-height: 1.3;
+  font-size: 1.1rem;
 `;
 export default Project;

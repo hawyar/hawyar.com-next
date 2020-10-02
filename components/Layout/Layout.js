@@ -28,6 +28,18 @@ const Layout = ({ children }, home) => {
   );
 };
 
+const Container = styled.div`
+  margin: 4rem auto 1rem;
+  max-width: 520px;
+  @media only screen and (max-width: 600px) {
+    max-width: 420px;
+  }
+
+  @media only screen and (max-width: 300px) {
+    max-width: 300px;
+  }
+`;
+
 const TopLine = styled.div`
   position: absolute;
   left: 0;
@@ -35,13 +47,6 @@ const TopLine = styled.div`
   width: 100vw;
   height: 1rem;
   background-color: ${(props) => props.theme.colors.primary};
-`;
-
-const Container = styled.div`
-  max-width: 35rem;
-  padding: 0 1rem;
-
-  margin: 3rem auto 6rem;
 `;
 
 export default Layout;

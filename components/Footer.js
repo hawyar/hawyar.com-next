@@ -16,6 +16,7 @@ const Footer = () => {
 };
 
 const Wrapper = styled.div`
+  padding: 1rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
