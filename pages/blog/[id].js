@@ -28,7 +28,7 @@ export default function Post({ postData }) {
             </div>
           </a>
         </Link>
-        <div>Suggest a change</div>
+        <div>Thanks for reading!</div>
       </FooterWrapper>
     </Layout>
   );

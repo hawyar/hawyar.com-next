@@ -1,4 +1,4 @@
 ---
-title: 'A Reusable React Component for SVG Icons'
+title: 'Svg Icons from Figma to React'
 date: '09/12/2020'
 ---

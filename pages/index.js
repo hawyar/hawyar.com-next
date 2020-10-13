@@ -24,14 +24,14 @@ export default function Home({ allPostsData }) {
       </Head>
       <div>
         <MainHeader size='lg' as='h1'>
-          Hi I'm Hawyar. I enjoy creating software that enables and helps others
+          Hi I'm Hawyar. I enjoy developing performant Jamstack applications
         </MainHeader>
       </div>
 
-      <section>
+      <Content>
         <Blog posts={allPostsData} />
         <Project />
-      </section>
+      </Content>
       <footer>
         <Footer />
       </footer>
@@ -42,6 +42,10 @@ export default function Home({ allPostsData }) {
 const MainHeader = styled(Base)`
   font-weight: 400;
   letter-spacing: -1.3px;
+`;
+
+const Content = styled.div`
+  padding-top: 1rem;
 `;
 
 const SectionHeader = styled(Base)`
