@@ -23,8 +23,15 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Contact = styled(Base)`
+const Contact = styled.span`
   font-weight: 500;
+  text-decoration: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+  :hover {
+    background-color: rgba(107, 72, 255, 0.2);
+  }
 
   color: ${(props) => props.theme.colors.primary};
 `;

@@ -4,9 +4,9 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Project from '../components/Project/Project';
 import Footer from '../components/Footer';
-import { SecondaryHeader, Base } from '../styles/_index';
 import styled from 'styled-components';
-import Blog from '../components/Blog/Blog';
+import Blog from '../components/Blog';
+import { up, down, between, only } from 'styled-breakpoints';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -23,15 +23,16 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <div>
-        <MainHeader size='lg' as='h1'>
-          Hi I'm Hawyar. I enjoy developing performant Jamstack applications
+        <MainHeader>
+          Hi I'm Hawyar. I enjoy developing performant web applications on the
+          Jamstack
         </MainHeader>
       </div>
 
-      <Content>
+      <div>
         <Blog posts={allPostsData} />
         <Project />
-      </Content>
+      </div>
       <footer>
         <Footer />
       </footer>
@@ -39,26 +40,8 @@ export default function Home({ allPostsData }) {
   );
 }
 
-const MainHeader = styled(Base)`
+const MainHeader = styled.h1`
   font-weight: 400;
   letter-spacing: -1.3px;
-`;
-
-const Content = styled.div`
-  padding-top: 1rem;
-`;
-
-const SectionHeader = styled(Base)`
-  font-weight: 500;
-  letter-spacing: -0.8px;
-`;
-
-const PostHeader = styled(Base)`
-  font-weight: 500;
-  text-decoration: none;
-
-  :hover {
-    text-decoration: underline;
-  }
-  color: ${(props) => props.theme.colors.primary};
+  line-height: 1.1;
 `;

@@ -28,24 +28,37 @@ const Project = () => {
   return (
     <div
       css={`
-        padding-top: 2rem;
+        margin-top: 6rem;
       `}
     >
       <SectionHeader size='xs' as='h3'>
         Projects
       </SectionHeader>
       <div>
-        <Spacer size='2rem' />
         {projects.map((el) => {
           return (
-            <div key={el.id}>
+            <div
+              key={el.id}
+              css={`
+                margin: 2rem 0;
+                list-style: none;
+              `}
+            >
               <a href={el.link} style={{ textDecoration: `none` }}>
                 <PostHeader as='h1' size='sm'>
                   {el.name}
                 </PostHeader>
               </a>
-              <Spacer size='1rem' />
-              <Info a='p' size='xs'>
+              <Info
+                a='p'
+                size='xs'
+                css={`
+                  margin-top: 1rem;
+                  color: rgba(0, 0, 0, 0.8);
+
+                  font-weight: 500;
+                `}
+              >
                 {el.description}
               </Info>
               <Spacer size='3rem' />
@@ -60,17 +73,23 @@ const Spacer = styled.div`
   padding-top: ${(props) => (props.size ? props.size : `1rem`)};
 `;
 
-const SectionHeader = styled(Base)`
+const SectionHeader = styled.h1`
   font-weight: 500;
   letter-spacing: -0.8px;
 `;
-const PostHeader = styled(Base)`
-  font-weight: 500;
 
+const PostHeader = styled.h1`
+  color: ${(props) => props.theme.colors.primary};
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.4em;
+  line-height: 1.2;
   :hover {
     text-decoration: underline;
   }
-  color: ${(props) => props.theme.colors.primary};
+  margin: 0;
+  padding: 0;
 `;
 
 const Info = styled(Base)`

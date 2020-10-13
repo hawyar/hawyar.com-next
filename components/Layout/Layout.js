@@ -31,12 +31,12 @@ const Layout = ({ children }, home) => {
 const Container = styled.div`
   margin: 4rem auto 1rem;
   max-width: 520px;
-  @media only screen and (max-width: 600px) {
-    max-width: 420px;
+  @media only screen and (max-width: 820px) {
+    max-width: calc(100vw - 12rem);
   }
 
-  @media only screen and (max-width: 300px) {
-    max-width: 300px;
+  @media only screen and (max-width: 640px) {
+    max-width: calc(100vw - 4rem);
   }
 `;
 
