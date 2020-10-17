@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import { Base } from '../../styles/_index';
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <Layout blogPage>
       <Head>
-        <title>{postData.title}</title>
+        <title>{postData.data.title}</title>
       </Head>
 
       <article>

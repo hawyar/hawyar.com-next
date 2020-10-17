@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-const name = `Hawyar`;
 export const siteTitle = `Hawyar`;
 
-const Layout = ({ children }, home) => {
+const Layout = ({ children, blogPage }) => {
+  console.group(blogPage);
   return (
-    <TopLine>
+    <TopLine custom={blogPage}>
       <Container>
         <Head>
           <link rel='icon' href='/favicon.ico' />
@@ -20,7 +20,7 @@ const Layout = ({ children }, home) => {
           <meta name='og:title' content={siteTitle} />
           <meta name='twitter:card' content='summary_large_image' />
 
-          <title>{siteTitle}</title>
+          <title>{siteTitle}hello</title>
         </Head>
         <main>{children}</main>
       </Container>
@@ -46,7 +46,9 @@ const TopLine = styled.div`
   right: 0;
   width: 100vw;
   height: 1rem;
-  background-color: ${(props) => props.theme.colors.primary};
+
+  background-color: ${(props) =>
+    props.custom ? props.theme.colors.dark : props.theme.colors.primary};
 `;
 
 export default Layout;

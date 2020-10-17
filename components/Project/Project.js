@@ -3,22 +3,25 @@ import styled from 'styled-components';
 const projects = [
   {
     id: 1,
-    name: "Manchester University's Open Source Project",
-    link: 'https://muopensource.netlify.app/',
+    name: "Manchester University's Open Source",
+    repo: 'https://github.com/muopensource/muopensource.org',
+    website: 'https://muopensource.netlify.app/',
     description:
-      "Created and actively maintaining Manchester University's open source project.",
+      "An open source project for Manchester University's Math & Computer Science department to archive, store, and share resources.",
   },
   {
     id: 2,
-    name: 'gobucky - A CLI for Google Cloud Storage',
-    link: 'https://github.com/muopensource/gcloud-explore',
+    name: 'Google Cloud Explore',
+    repo: 'https://github.com/muopensource/gcloud-explore',
+    website: `'`,
     description:
-      'A service layer running on top of Google Cloud Platform which provides a set of chainable API methods to create a pipe for data processing.',
+      'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs to consume and process and data.',
   },
   {
     id: 3,
     name: 'GraphCMS Blog Starter',
-    link: 'https://gatsby-graphcms.netlify.app/',
+    repo: 'https://github.com/hawyar/gatsby-graphcms-starter',
+    website: `https://gatsby-graphcms.netlify.app/`,
     description:
       'A Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more.',
   },
@@ -37,14 +40,8 @@ const Project = () => {
       <div>
         {projects.map((el) => {
           return (
-            <div
-              key={el.id}
-              css={`
-                margin: 2rem 0;
-                list-style: none;
-              `}
-            >
-              <a href={el.link} style={{ textDecoration: `none` }}>
+            <Card key={el.id}>
+              <a href={el.repo} style={{ textDecoration: `none` }}>
                 <PostHeader as='h1' size='sm'>
                   {el.name}
                 </PostHeader>
@@ -55,20 +52,29 @@ const Project = () => {
                 css={`
                   margin-top: 1rem;
                   color: rgba(0, 0, 0, 0.8);
-
                   font-weight: 500;
                 `}
               >
                 {el.description}
               </Info>
               <Spacer size='3rem' />
-            </div>
+            </Card>
           );
         })}
       </div>
     </div>
   );
 };
+
+const Card = styled.div`
+  /* max-width: 420px;
+  list-style: none;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 1rem;  */
+`;
+
 const Spacer = styled.div`
   padding-top: ${(props) => (props.size ? props.size : `1rem`)};
 `;
@@ -76,6 +82,7 @@ const Spacer = styled.div`
 const SectionHeader = styled.h1`
   font-weight: 500;
   letter-spacing: -0.8px;
+  margin-bottom: 2em;
 `;
 
 const PostHeader = styled.h1`
@@ -90,6 +97,7 @@ const PostHeader = styled.h1`
   }
   margin: 0;
   padding: 0;
+  letter-spacing: -0.7px;
 `;
 
 const Info = styled(Base)`
@@ -97,5 +105,7 @@ const Info = styled(Base)`
   margin: 0;
   line-height: 1.3;
   font-size: 1.1rem;
+  letter-spacing: -0.7px;
+  /* width: 85%; */
 `;
 export default Project;

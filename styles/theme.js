@@ -2,6 +2,8 @@ export const theme = {
   colors: {
     primary: '#6b48ff',
     link: '#0070f3',
+    light: '#fff',
+    dark: '#000',
   },
   fonts: {
     heading: 'Inter',

@@ -9,7 +9,7 @@ const Blog = ({ posts }) => {
       `}
     >
       <SectionHeader size='xs' as='h3'>
-        Blog
+        Writings
       </SectionHeader>
       <div>
         {posts.map(({ id, title, date }) => {
@@ -19,6 +19,7 @@ const Blog = ({ posts }) => {
                 css={`
                   margin: 2rem 0;
                   list-style: none;
+                  width: 85%;
                 `}
               >
                 <Link href={`/blog/${id}`} passHref>
@@ -59,6 +60,7 @@ const PostHeader = styled.h1`
   cursor: pointer;
   font-weight: 500;
   text-decoration: none;
+  letter-spacing: -0.7px;
   font-size: 1.4em;
   line-height: 1.2;
   :hover {
