@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { Base } from '../styles/_index';
 
-// i might as well... lol
-const email = process.env.PERSONAL_EMAIL || `hawyarfa@gmail.com`;
+const email = process.env.PERSONAL_EMAIL;
 
 const Footer = () => {
   return (

@@ -4,9 +4,8 @@ import styled from 'styled-components';
 export const siteTitle = `Hawyar`;
 
 const Layout = ({ children, blogPage }) => {
-  console.group(blogPage);
   return (
-    <TopLine custom={blogPage}>
+    <TopLine custom={blogPage && `none`}>
       <Container>
         <Head>
           <link rel='icon' href='/favicon.ico' />
@@ -44,11 +43,12 @@ const TopLine = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  width: 100vw;
   height: 1rem;
-
+  min-width: 100vw;
   background-color: ${(props) =>
-    props.custom ? props.theme.colors.dark : props.theme.colors.primary};
+    props.custom === `none`
+      ? props.theme.colors.dark
+      : props.theme.colors.primary};
 `;
 
 export default Layout;

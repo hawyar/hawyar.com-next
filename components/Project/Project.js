@@ -1,31 +1,5 @@
 import { Base } from '../../styles/_index';
 import styled from 'styled-components';
-const projects = [
-  {
-    id: 1,
-    name: "Manchester University's Open Source",
-    repo: 'https://github.com/muopensource/muopensource.org',
-    website: 'https://muopensource.netlify.app/',
-    description:
-      "An open source project for Manchester University's Math & Computer Science department to archive, store, and share resources.",
-  },
-  {
-    id: 2,
-    name: 'Google Cloud Explore',
-    repo: 'https://github.com/muopensource/gcloud-explore',
-    website: `'`,
-    description:
-      'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs to consume and process and data.',
-  },
-  {
-    id: 3,
-    name: 'GraphCMS Blog Starter',
-    repo: 'https://github.com/hawyar/gatsby-graphcms-starter',
-    website: `https://gatsby-graphcms.netlify.app/`,
-    description:
-      'A Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more.',
-  },
-];
 
 const Project = () => {
   return (
@@ -34,9 +8,7 @@ const Project = () => {
         margin-top: 6rem;
       `}
     >
-      <SectionHeader size='xs' as='h3'>
-        Projects
-      </SectionHeader>
+      <SectionHeader>Projects</SectionHeader>
       <div>
         {projects.map((el) => {
           return (
@@ -67,7 +39,8 @@ const Project = () => {
 };
 
 const Card = styled.div`
-  /* max-width: 420px;
+  max-width: 420px;
+  /* 
   list-style: none;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -83,6 +56,7 @@ const SectionHeader = styled.h1`
   font-weight: 500;
   letter-spacing: -0.8px;
   margin-bottom: 2em;
+  font-size: 1.2em;
 `;
 
 const PostHeader = styled.h1`
@@ -105,7 +79,34 @@ const Info = styled(Base)`
   margin: 0;
   line-height: 1.3;
   font-size: 1.1rem;
-  letter-spacing: -0.7px;
+  letter-spacing: -0.5px;
   /* width: 85%; */
 `;
 export default Project;
+
+const projects = [
+  {
+    id: 1,
+    name: "Manchester University's Open Source",
+    repo: 'https://github.com/muopensource/muopensource.org',
+    website: 'https://muopensource.netlify.app/',
+    description:
+      "An open source project for Manchester University's Math & Computer Science department to archive, store, and share resources.",
+  },
+  {
+    id: 2,
+    name: 'Google Cloud Explore',
+    repo: 'https://github.com/muopensource/gcloud-explore',
+    website: `'`,
+    description:
+      'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs to consume and process and data.',
+  },
+  {
+    id: 3,
+    name: 'GraphCMS Blog Starter',
+    repo: 'https://github.com/hawyar/gatsby-graphcms-starter',
+    website: `https://gatsby-graphcms.netlify.app/`,
+    description:
+      'A Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more.',
+  },
+];
