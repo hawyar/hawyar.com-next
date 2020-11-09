@@ -7,6 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: 1em;
-    /* font-display: swap; */
+    font-display: swap;
   }
 `;

@@ -26,13 +26,13 @@ export default function Home({ allPostsData }) {
       </Head>
       <div>
         <MainHeader>
-          Hi I'm Hawyar. I enjoy design and developing software - often I write
-          about it here.
+          Hi I'm Hawyar. I enjoy develping web applications and giving back to
+          open source - often I write about it here.
         </MainHeader>
       </div>
 
       <div>
-        <Blog posts={allPostsData} />
+        {/* <Blog posts={allPostsData} /> */}
         <Project />
       </div>
       <footer>

@@ -15,6 +15,7 @@ export default function Post({ postData }) {
         <Title size='lg' as='h1'>
           {postData.data.title}
         </Title>
+        <p> {postData.data.date}</p>
         <Spacer size='2rem' />
 
         <MdContent dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
@@ -48,6 +49,10 @@ const MdContent = styled.div`
   }
   h5 {
     font-size: ${(props) => props.theme.fontSize.sm};
+  }
+
+  p {
+    line-height: 1.4;
   }
 `;
 

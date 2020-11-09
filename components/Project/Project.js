@@ -1,4 +1,3 @@
-import { Base } from '../../styles/_index';
 import styled from 'styled-components';
 
 const Project = () => {
@@ -18,17 +17,7 @@ const Project = () => {
                   {el.name}
                 </PostHeader>
               </a>
-              <Info
-                a='p'
-                size='xs'
-                css={`
-                  margin-top: 1rem;
-                  color: rgba(0, 0, 0, 0.8);
-                  font-weight: 500;
-                `}
-              >
-                {el.description}
-              </Info>
+              <Info>{el.description}</Info>
               <Spacer size='3rem' />
             </Card>
           );
@@ -40,7 +29,7 @@ const Project = () => {
 
 const Card = styled.div`
   max-width: 420px;
-  /* 
+  /*
   list-style: none;
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -74,19 +63,28 @@ const PostHeader = styled.h1`
   letter-spacing: -0.7px;
 `;
 
-const Info = styled(Base)`
+const Info = styled.p`
   padding: 0;
-  margin: 0;
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
   line-height: 1.3;
   font-size: 1.1rem;
   letter-spacing: -0.5px;
-  /* width: 85%; */
 `;
 export default Project;
 
 const projects = [
   {
-    id: 1,
+    id: 4,
+    name: 'Monster link',
+    repo: 'https://github.com/hawyar/monster-link',
+    website: 'https://monster-link.vercel.app/',
+    description:
+      'A collection of curated resourceful links. Designed with simplicity and a unified design system in mind. Powered by Airtable as headless CMS and deployed to vercel.',
+  },
+  {
+    id: 3,
     name: "Manchester University's Open Source",
     repo: 'https://github.com/muopensource/muopensource.org',
     website: 'https://muopensource.netlify.app/',
@@ -102,7 +100,7 @@ const projects = [
       'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs to consume and process and data.',
   },
   {
-    id: 3,
+    id: 1,
     name: 'GraphCMS Blog Starter',
     repo: 'https://github.com/hawyar/gatsby-graphcms-starter',
     website: `https://gatsby-graphcms.netlify.app/`,

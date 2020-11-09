@@ -1,17 +1,12 @@
 import styled from 'styled-components';
-import { Base } from '../styles/_index';
 
-const email = process.env.PERSONAL_EMAIL;
+const email = process.env.EMAIL || `hawyarfa@gmail.com`;
 
 const Footer = () => {
   return (
     <Wrapper>
-      <Self as='span' size='base'>
-        Hawyar F.
-      </Self>
-      <Contact as='a' size='base' href={`mailto:${email}`}>
-        Get in touch
-      </Contact>
+      <Self>Hawyar F.</Self>
+      <Contact href={`mailto:${email}`}>Get in touch</Contact>
     </Wrapper>
   );
 };
