@@ -26,8 +26,8 @@ export default function Home({ allPostsData }) {
       </Head>
       <div>
         <MainHeader>
-          Hi I'm Hawyar. I enjoy develping web applications and giving back to
-          open source - often I write about it here.
+          Hi I'm Hawyar. I enjoy open source software and develping web
+          applications and.
         </MainHeader>
       </div>
 
