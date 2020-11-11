@@ -29,3 +29,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 service-account.json
+
+
+# for now 
+_posts
