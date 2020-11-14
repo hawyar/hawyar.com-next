@@ -86,7 +86,7 @@ const projects = [
   {
     id: 3,
     name: "Manchester University's Open Source",
-    repo: 'https://github.com/muopensource/muopensource.org',
+    repo: 'https://github.com/muopensource',
     website: 'https://muopensource.netlify.app/',
     description:
       "An open source project for Manchester University's Math & Computer Science department to archive, store, and share resources.",
