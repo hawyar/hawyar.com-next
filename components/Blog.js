@@ -10,7 +10,7 @@ const Blog = ({ posts }) => {
     >
       <SectionHeader>Writings</SectionHeader>
       <div>
-        {posts.map(({ id, title, date }) => {
+        {posts.map(({ id, title, date, slug }) => {
           return (
             <div key={id}>
               <li
@@ -20,7 +20,7 @@ const Blog = ({ posts }) => {
                   width: 85%;
                 `}
               >
-                <Link href={`/blog/${id}`} passHref>
+                <Link href={`/blog/${slug}`} passHref>
                   <PostHeader as='a' size='sm'>
                     {title}
                   </PostHeader>
@@ -55,15 +55,16 @@ const SectionHeader = styled.h1`
   font-size: 1.2em;
 `;
 const PostHeader = styled.h1`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.dark};
   cursor: pointer;
   font-weight: 500;
   text-decoration: none;
   letter-spacing: -0.7px;
   font-size: 1.4em;
   line-height: 1.2;
+  transition: color 0.1s ease-in-out;
   :hover {
-    text-decoration: underline;
+    color: ${(props) => props.theme.colors.primary};
   }
   margin: 0;
   padding: 0;

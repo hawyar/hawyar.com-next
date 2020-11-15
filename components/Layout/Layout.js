@@ -29,7 +29,7 @@ const Layout = ({ children, blogPage }) => {
 
 const Container = styled.div`
   margin: 4rem auto 1rem;
-  max-width: 520px;
+  max-width: 620px;
   @media only screen and (max-width: 820px) {
     max-width: calc(100vw - 12rem);
   }

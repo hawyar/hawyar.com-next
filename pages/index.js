@@ -1,20 +1,42 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/Layout/Layout';
-import { getSortedPostsData } from '../lib/posts';
 import Project from '../components/Project/Project';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Blog from '../components/Blog';
+import { request } from '../lib/blog';
+import { gql } from 'graphql-request';
+
+const AllBlogs = gql`
+  query AllBlog {
+    posts: allBlogs(orderBy: _createdAt_ASC) {
+      title
+      _firstPublishedAt
+      _status
+      category
+      content(markdown: true)
+      id
+      slug
+      _seoMetaTags(locale: en) {
+        tag
+        content
+        attributes
+      }
+      _updatedAt
+    }
+  }
+`;
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const data = await request({
+    query: AllBlogs,
+  });
   return {
-    props: {
-      allPostsData,
-    },
+    props: { data },
   };
 }
-export default function Home({ allPostsData }) {
+export default function Home({ data }) {
+  const posts = data.posts || [];
   return (
     <Layout home>
       <Head>
@@ -31,7 +53,7 @@ export default function Home({ allPostsData }) {
       </div>
 
       <div>
-        {/* <Blog posts={allPostsData} /> */}
+        <Blog posts={posts} />
         <Project />
       </div>
       <footer>
