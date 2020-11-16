@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout/Layout';
+import Layout from '../../components/Layout';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { Image } from 'react-datocms';
+import { renderMetaTags } from 'react-datocms';
 
 const renderers = {
   code: ({ language, value }) => {
@@ -23,7 +24,6 @@ const renderers = {
 };
 
 export default function Post({ data }) {
-  console.log(data);
   const router = useRouter();
   const [blog] = data.blog;
 
@@ -34,7 +34,9 @@ export default function Post({ data }) {
   return (
     <Layout blogPage>
       <Head>
-        <title>{data.title}</title>
+        {renderMetaTags(blog._seoMetaTags)}
+
+        <h1>{data.title}</h1>
       </Head>
 
       {router.isFallback ? (
@@ -46,6 +48,16 @@ export default function Post({ data }) {
               {blog.title}
             </Title>
             <Spacer size='2rem' />
+
+            <Image data={blog.featuredImage.responsiveImage} />
+
+            <div>
+              {/* <Category>
+                {blog.category.map((el) => (
+                  <p key={el.id}>{el.category}</p>
+                ))}
+              </Category> */}
+            </div>
             <MdContent>
               <ReactMarkdown
                 children={blog.content}
@@ -104,7 +116,10 @@ const AllBlogs = gql`
       title
       _firstPublishedAt
       _status
-      category
+      category {
+        id
+        category
+      }
       content(markdown: false)
       id
       slug
@@ -135,7 +150,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const data = await request({
     query: AllBlogs,
-    variables: {
+    variable: {
       slug: params.slug,
     },
   });
@@ -147,18 +162,25 @@ export async function getStaticProps({ params }) {
 
 const MdContent = styled.div`
   .mdWrapper {
+    margin-top: 3rem;
     h1 {
-      font-size: ${(props) => props.theme.fontSize.md};
+      font-weight: 600;
+      letter-spacing: -0.8px;
+      font-size: ${(props) => props.theme.fontSize.lg};
     }
     h2 {
       margin: 0;
       padding-top: 2rem;
-      font-size: ${(props) => props.theme.fontSize.sm};
+      font-weight: 500;
+      letter-spacing: -0.8px;
+
+      font-size: ${(props) => props.theme.fontSize.md};
     }
     h3 {
       margin: 0;
+      font-weight: 500;
       padding-top: 2rem;
-      font-size: ${(props) => props.theme.fontSize.md};
+      font-size: ${(props) => props.theme.fontSize.sm};
     }
     h4,
     h5,
@@ -204,6 +226,20 @@ const Title = styled.h1`
 const Spacer = styled.div`
   padding-top: ${(props) => (props.size ? props.size : `1rem`)};
 `;
+
+const Category = styled.div`
+  display: flex;
+  justify-content: left;
+  padding: 10px 0;
+  grid-template-columns: 1fr 1fr;
+
+  p {
+    font-size: 0.9em;
+    color: #6a737d;
+    margin-right: 15px;
+  }
+`;
+
 const FooterWrapper = styled.div`
   margin-top: 4rem;
   padding: 1rem 0;

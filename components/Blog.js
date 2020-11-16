@@ -50,7 +50,7 @@ const Blog = ({ posts }) => {
 };
 
 const SectionHeader = styled.h1`
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.8px;
   font-size: 1.2em;
 `;

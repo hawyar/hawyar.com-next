@@ -42,21 +42,22 @@ const Spacer = styled.div`
 `;
 
 const SectionHeader = styled.h1`
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.8px;
   margin-bottom: 2em;
   font-size: 1.2em;
 `;
 
 const PostHeader = styled.h1`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.dark};
   cursor: pointer;
   font-weight: 500;
   text-decoration: none;
   font-size: 1.4em;
   line-height: 1.2;
+  transition: color 0.1s ease-in-out;
   :hover {
-    text-decoration: underline;
+    color: ${(props) => props.theme.colors.primary};
   }
   margin: 0;
   padding: 0;
@@ -81,7 +82,7 @@ const projects = [
     repo: 'https://github.com/hawyar/monster-link',
     website: 'https://monster-link.vercel.app/',
     description:
-      'A collection of curated resourceful links. Designed with simplicity and a unified design system in mind. Powered by Airtable as headless CMS and deployed to vercel.',
+      'A website hosting my collection of resourceful link to share with friends. Developed with Next.js and Airtable as a headless CMS.',
   },
   {
     id: 3,
@@ -97,7 +98,7 @@ const projects = [
     repo: 'https://github.com/muopensource/gcloud-explore',
     website: `'`,
     description:
-      'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs to consume and process and data.',
+      'A service layer running on top of Google Cloud Platform which provides a set of chainable APIs.',
   },
   {
     id: 1,
@@ -105,6 +106,6 @@ const projects = [
     repo: 'https://github.com/hawyar/gatsby-graphcms-starter',
     website: `https://gatsby-graphcms.netlify.app/`,
     description:
-      'A Gatsby Blog powered by GraphCMS and deployed to Netlify with some additional featurs including Caching, Image Optimization, Dark Mode, RSS Feed, and more.',
+      'A Gatsby Blog powered by GraphCMS and deployed to Netlify. With caching, image optimization, dark mode, RSS feed, and more.',
   },
 ];

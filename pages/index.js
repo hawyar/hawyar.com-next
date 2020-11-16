@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/Layout/Layout';
-import Project from '../components/Project/Project';
+import Layout, { siteTitle } from '../components/Layout';
+import Project from '../components/Project';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Blog from '../components/Blog';
@@ -13,7 +13,10 @@ const AllBlogs = gql`
       title
       _firstPublishedAt
       _status
-      category
+      category {
+        id
+        category
+      }
       content(markdown: true)
       id
       slug
@@ -56,6 +59,7 @@ export default function Home({ data }) {
         <Blog posts={posts} />
         <Project />
       </div>
+
       <footer>
         <Footer />
       </footer>

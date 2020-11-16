@@ -24,6 +24,7 @@ const Contact = styled.span`
   text-decoration: none;
   padding: 0.8rem;
   border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out;
   background-color: rgba(107, 72, 255, 0.1);
 
