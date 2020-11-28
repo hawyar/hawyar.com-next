@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Blog from '../components/Blog';
 import { request } from '../lib/blog';
 import { gql } from 'graphql-request';
-
+import Nav from '../components/Nav';
 const AllBlogs = gql`
   query AllBlog {
     posts: allBlogs(orderBy: _createdAt_ASC) {
@@ -42,6 +42,9 @@ export default function Home({ data }) {
   const posts = data.posts || [];
   return (
     <Layout home>
+      <div>
+        <Nav />
+      </div>
       <Head>
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'
@@ -51,7 +54,8 @@ export default function Home({ data }) {
       </Head>
       <div>
         <MainHeader>
-          Hi I'm Hawyar. I enjoy developing web applications and open source.
+          Hi I'm Hawyar. I enjoy developing web applications and contributing to
+          open source.
         </MainHeader>
       </div>
 

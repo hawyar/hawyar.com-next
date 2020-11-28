@@ -47,7 +47,6 @@ export default function Post({ data }) {
             <Title size='lg' as='h1'>
               {blog.title}
             </Title>
-            <Spacer size='2rem' />
 
             <Image data={blog.featuredImage.responsiveImage} />
 
@@ -160,9 +159,33 @@ export async function getStaticProps({ params }) {
   };
 }
 
+const Title = styled.h1`
+  line-height: 1.1;
+  font-weight: 600;
+  font-size: ${({ theme }) => theme.fontSize.md};
+  letter-spacing: -1.2px;
+  margin-bottom: 3rem;
+`;
+const Spacer = styled.div`
+  padding-top: ${(props) => (props.size ? props.size : `1rem`)};
+`;
+
+const Category = styled.div`
+  display: flex;
+  justify-content: left;
+  padding: 10px 0;
+  grid-template-columns: 1fr 1fr;
+
+  p {
+    font-size: 0.9em;
+    color: #6a737d;
+    margin-right: 15px;
+  }
+`;
+
 const MdContent = styled.div`
   .mdWrapper {
-    margin-top: 3rem;
+    margin-top: 4rem;
     h1 {
       font-weight: 600;
       letter-spacing: -0.8px;
@@ -196,6 +219,7 @@ const MdContent = styled.div`
     p {
       font-weight: 400;
       line-height: 1.6;
+      padding: 0.5rem 0;
     }
 
     a {
@@ -214,29 +238,6 @@ const MdContent = styled.div`
     li {
       padding: 0.5rem 0;
     }
-  }
-`;
-
-const Title = styled.h1`
-  line-height: 1.1;
-  font-weight: 600;
-  font-size: ${({ theme }) => theme.fontSize.md};
-  letter-spacing: -1.2px;
-`;
-const Spacer = styled.div`
-  padding-top: ${(props) => (props.size ? props.size : `1rem`)};
-`;
-
-const Category = styled.div`
-  display: flex;
-  justify-content: left;
-  padding: 10px 0;
-  grid-template-columns: 1fr 1fr;
-
-  p {
-    font-size: 0.9em;
-    color: #6a737d;
-    margin-right: 15px;
   }
 `;
 
