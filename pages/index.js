@@ -7,6 +7,7 @@ import Blog from '../components/Blog';
 import { request } from '../lib/blog';
 import { gql } from 'graphql-request';
 import Nav from '../components/Nav';
+import Image from 'next/image';
 const AllBlogs = gql`
   query AllBlog {
     posts: allBlogs(orderBy: _createdAt_ASC) {
@@ -50,13 +51,20 @@ export default function Home({ data }) {
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'
           rel='stylesheet'
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'
+          rel='stylesheet'
+        ></link>
+
         <title>{siteTitle}</title>
       </Head>
+      {/* <Image src='/profile.png' alt='Hawyar Farooq' width={160} height={160} /> */}
+
       <div>
-        <MainHeader>
-          Hi I'm Hawyar. I enjoy developing web applications and contributing to
-          open source.
-        </MainHeader>
+        <Header>
+          Software Developer from beautiful Kurdistan designing and developing
+          for the web.
+        </Header>
       </div>
 
       <div>
@@ -71,10 +79,9 @@ export default function Home({ data }) {
   );
 }
 
-const MainHeader = styled.h1`
-  font-weight: 400;
+const Header = styled.h1`
+  font-weight: 500;
   letter-spacing: -1.3px;
-  line-height: 1.1;
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 1.5em;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
 `;

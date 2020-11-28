@@ -18,6 +18,9 @@ const Project = () => {
                 </PostHeader>
               </a>
               <Info>{el.description}</Info>
+              {el.website ? (
+                <Website href={el?.website}>View live website →</Website>
+              ) : null}
               <Spacer size='3rem' />
             </Card>
           );
@@ -29,12 +32,6 @@ const Project = () => {
 
 const Card = styled.div`
   max-width: 420px;
-  /*
-  list-style: none;
-  background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  padding: 1rem;  */
 `;
 
 const Spacer = styled.div`
@@ -72,5 +69,10 @@ const Info = styled.p`
   line-height: 1.3;
   font-size: 1.1rem;
   letter-spacing: -0.5px;
+`;
+
+const Website = styled.a`
+  color: ${(props) => props.theme.colors.primary};
+  text-decoration: none;
 `;
 export default Project;

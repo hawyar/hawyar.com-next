@@ -44,12 +44,9 @@ export default function Post({ data }) {
       ) : (
         <div>
           <article>
-            <Title size='lg' as='h1'>
-              {blog.title}
-            </Title>
+            {/* <Image data={blog.featuredImage.responsiveImage} /> */}
 
-            <Image data={blog.featuredImage.responsiveImage} />
-
+            <Title>{blog.title}</Title>
             <div>
               {/* <Category>
                 {blog.category.map((el) => (
@@ -162,12 +159,9 @@ export async function getStaticProps({ params }) {
 const Title = styled.h1`
   line-height: 1.1;
   font-weight: 600;
-  font-size: ${({ theme }) => theme.fontSize.md};
-  letter-spacing: -1.2px;
+  font-size: ${({ theme }) => theme.fontSize.lg};
+  letter-spacing: -1.6px;
   margin-bottom: 3rem;
-`;
-const Spacer = styled.div`
-  padding-top: ${(props) => (props.size ? props.size : `1rem`)};
 `;
 
 const Category = styled.div`
