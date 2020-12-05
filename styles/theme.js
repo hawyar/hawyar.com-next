@@ -1,4 +1,10 @@
 export const theme = {
+  breakpoints: {
+    sm: '576px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
+  },
   colors: {
     primary: '#6b48ff',
     link: '#0070f3',

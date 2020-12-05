@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <Wrapper>
-      <Self>Hawyar F.</Self>
-    </Wrapper>
+    <footer>
+      <Wrapper>
+        <Self>Hawyar F.</Self>
+      </Wrapper>
+    </footer>
   );
 };
 

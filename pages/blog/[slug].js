@@ -44,8 +44,6 @@ export default function Post({ data }) {
       ) : (
         <div>
           <article>
-            {/* <Image data={blog.featuredImage.responsiveImage} /> */}
-
             <Title>{blog.title}</Title>
             <div>
               {/* <Category>
@@ -53,6 +51,7 @@ export default function Post({ data }) {
                   <p key={el.id}>{el.category}</p>
                 ))}
               </Category> */}
+              Published: {blog['_firstPublishedAt']}
             </div>
             <MdContent>
               <ReactMarkdown
@@ -179,7 +178,7 @@ const Category = styled.div`
 
 const MdContent = styled.div`
   .mdWrapper {
-    margin-top: 4rem;
+    margin-top: 2rem;
     h1 {
       font-weight: 600;
       letter-spacing: -0.8px;

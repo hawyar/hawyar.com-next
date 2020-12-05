@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { projects } from '../lib/projects';
+import ProjectCard from './ProjectCard';
 const Project = () => {
   return (
     <div
@@ -8,30 +9,34 @@ const Project = () => {
       `}
     >
       <SectionHeader>Projects</SectionHeader>
-      <div>
+      <ProjectWrapper>
         {projects.map((el) => {
           return (
-            <Card key={el.id}>
-              <a href={el.repo} style={{ textDecoration: `none` }}>
-                <PostHeader as='h1' size='sm'>
-                  {el.name}
-                </PostHeader>
-              </a>
-              <Info>{el.description}</Info>
-              {el.website ? (
-                <Website href={el?.website}>View live website →</Website>
-              ) : null}
-              <Spacer size='3rem' />
-            </Card>
+            <div key={el.id}>
+              <ProjectCard project={el} />
+            </div>
+            // <Card key={el.id}>
+            //   <a href={el.repo} style={{ textDecoration: `none` }}>
+            //     <PostHeader as='h1' size='sm'>
+            //       {el.name}
+            //     </PostHeader>
+            //   </a>
+            //   <Info>{el.description}</Info>
+            //   {el.website ? (
+            //     <Website href={el?.website}>View live website →</Website>
+            //   ) : null}
+            //   <Spacer size='3rem' />
+            // </Card>
           );
         })}
-      </div>
+      </ProjectWrapper>
     </div>
   );
 };
 
-const Card = styled.div`
-  max-width: 420px;
+const ProjectWrapper = styled.div`
+  display: grid;
+  grid-row-gap: 2rem;
 `;
 
 const Spacer = styled.div`
