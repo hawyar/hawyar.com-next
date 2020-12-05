@@ -12,7 +12,10 @@ export default function Home({ data }) {
   const posts = data.posts || [];
   return (
     <Layout home>
-      <div>{/* <Nav /> */}</div>
+      <div>
+        {' '}
+        <Nav />{' '}
+      </div>
       <Head>
         <link
           href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'

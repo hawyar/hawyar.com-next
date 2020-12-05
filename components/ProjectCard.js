@@ -40,11 +40,13 @@ const Info = styled.div`
 
   h3 {
     font-weight: 500;
+    font-size: 1.5rem;
   }
 
   p {
     margin-bottom: 2rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 `;
 
@@ -59,10 +61,18 @@ const WebsiteLink = styled.a`
 `;
 
 const SoureCode = styled.a`
-  color: gray;
   font-size: 0.9rem;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 5px;
+  margin-left: ${({ alone }) => (alone ? '1rem' : 0)};
+  transition: background-color 0.2s ease-in-out;
   text-decoration: none;
-  margin-left: ${({ alone }) => (alone === true ? '1rem ' : '')};
+  :hover {
+    background-color: rgba(107, 72, 255, 0.19);
+  }
+
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export default ProjectCard;

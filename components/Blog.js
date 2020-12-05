@@ -22,7 +22,7 @@ const Blog = ({ posts }) => {
               >
                 <Link href={`/blog/${slug}`} passHref>
                   <PostHeader as='a' size='sm'>
-                    {title} <StyledDate>{'2020'}</StyledDate>
+                    {title}
                   </PostHeader>
                 </Link>
                 <div
@@ -55,10 +55,6 @@ const SectionHeader = styled.h1`
   font-size: 1.2em;
 `;
 
-const StyledDate = styled.span`
-  font-size: 0.9rem;
-  color: gray;
-`;
 const PostHeader = styled.h1`
   display: flex;
   align-items: center;

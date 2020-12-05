@@ -9,6 +9,9 @@ const Nav = () => {
         </Links>
         <Links href='https://github.com/hawyar'>Github</Links>
         <Links href='https://dribbble.com/Hawyar'>Dribbble</Links>
+        <Links href='https://videohive.net/user/hawyar/portfolio'>
+          Videohive
+        </Links>
       </LinkWrapper>
       <Contact href='mailto:hawyarfa@gmail.com'>Get in touch</Contact>
     </StyledNav>
@@ -52,7 +55,7 @@ const Links = styled.a`
   color: ${(props) => props.theme.colors.primary};
 `;
 
-const Contact = styled.span`
+const Contact = styled.a`
   font-weight: 500;
   text-decoration: none;
   padding: 12px 14px;
@@ -60,8 +63,13 @@ const Contact = styled.span`
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
-  background-color: rgba(107, 72, 255, 1);
-  color: ${(props) => props.theme.colors.light};
+  border: 1px solid rgba(107, 72, 255, 1);
+  color: ${(props) => props.theme.colors.dark};
+  :hover {
+    color: ${(props) => props.theme.colors.light};
+
+    background-color: rgba(107, 72, 255, 1);
+  }
 `;
 
 export default Nav;

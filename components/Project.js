@@ -15,18 +15,6 @@ const Project = () => {
             <div key={el.id}>
               <ProjectCard project={el} />
             </div>
-            // <Card key={el.id}>
-            //   <a href={el.repo} style={{ textDecoration: `none` }}>
-            //     <PostHeader as='h1' size='sm'>
-            //       {el.name}
-            //     </PostHeader>
-            //   </a>
-            //   <Info>{el.description}</Info>
-            //   {el.website ? (
-            //     <Website href={el?.website}>View live website →</Website>
-            //   ) : null}
-            //   <Spacer size='3rem' />
-            // </Card>
           );
         })}
       </ProjectWrapper>
