@@ -26,7 +26,7 @@ export default function Home({ data }) {
         <title>{siteTitle}</title>
       </Head>
       <div>
-        <Header>Hi I'm Hawyar 👋 </Header>
+        <Header>Hi I'm Hawyar</Header>
         <Secondary>
           Software Developer from beautiful Kurdistan designing and developing
           for the web.
