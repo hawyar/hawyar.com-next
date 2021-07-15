@@ -1,1 +1,1 @@
-hawyar.com built with [Next.js](https://nextjs.org/).
+hawyardotcom draft with with [Next.js](https://nextjs.org/).
